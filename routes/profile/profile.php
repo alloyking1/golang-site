@@ -13,4 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::middleware(['web'])->prefix('user')->group(function () {
+    Route::get('/test/user', function () {
+        dump('yaya');
+    });
+});
